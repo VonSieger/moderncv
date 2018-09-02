@@ -81,7 +81,7 @@
     \centering%
     % name and title
     \namestyle{\@firstname~\@lastname}%
-    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\% \isundefined doesn't work on \@title, as LaTeX itself defines \@title (before it possibly gets redefined by \title) 
+    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\% \isundefined doesn't work on \@title, as LaTeX itself defines \@title (before it possibly gets redefined by \title)
     % optional detailed information
     \if@details{%
       \addressfont\color{color2}%
@@ -143,6 +143,8 @@
   \hfill% US style
 %  \\[1em]% UK style
   \@date\\[2em]% US informal style: "January 1, 1900"; UK formal style: "01/01/1900"
+  %reference
+  \textbf{\@reference}\\[1em]
   % opening
   \raggedright%
   \@opening\\[1.5em]%
