@@ -96,7 +96,7 @@
       \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
         \addtomakeheaddetails{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomakeheaddetails{\@extrainfo}}%
-    \flushmakeheaddetails}\fi}\\[2.5em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \makehead
+    \flushmakeheaddetails}\fi}\\[0.5em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \makehead
 
 
 %-------------------------------------------------------------------------------
@@ -133,16 +133,16 @@
   \makehead%
   \par%
    % recipient block
-  \begin{minipage}[t]{.5\textwidth}
+  \begin{flushleft}
     \raggedright%
     \addressfont%
     {\bfseries\upshape\@recipientname}\\%
     \@recipientaddress%
-  \end{minipage}
+  \end{flushleft}
   % date
-  \hfill% US style
-%  \\[1em]% UK style
-  \@date\\[2em]% US informal style: "January 1, 1900"; UK formal style: "01/01/1900"
+  \begin{flushright}
+    \@date\\[2em]% US informal style: "January 1, 1900"; UK formal style: "01/01/1900"
+  \end{flushright}
   %reference
   \textbf{\@reference}\\[1em]
   % opening
